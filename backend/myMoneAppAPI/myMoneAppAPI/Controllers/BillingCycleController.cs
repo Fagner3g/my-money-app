@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.Results;
 
 namespace myMoneAppAPI.Controllers
 {
@@ -16,7 +17,7 @@ namespace myMoneAppAPI.Controllers
 
         public HttpResponseMessage GetAllBillingCycle()
         {
-            List<BillingCycle> billingCycles = billingRepositorio.GetAll().ToList();
+            List<BillingCycle> billingCycles = billingRepositorio.GetAll().OrderBy(x => x.year).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, billingCycles);
         }
 
@@ -33,11 +34,16 @@ namespace myMoneAppAPI.Controllers
 
         public HttpResponseMessage PostBillingCycle(BillingCycle billing)
         {
+            var r = billingRepositorio.GetAll();
+            billing.id = r.Count() +1;
+
+            if (string.IsNullOrEmpty(billing.name) || int.Equals(billing.month, 0) )
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Erro ao tentar criar ciclo.");
             bool result = billingRepositorio.Add(billing);
             if (result)
             {
                 var response = Request.CreateResponse(HttpStatusCode.Created, billing);
-                string uri = Url.Link("DefaultApi", new { id = billing.ID });
+                string uri = Url.Link("DefaultApi", new { billing.id });
                 response.Headers.Location = new Uri(uri);
                 return response;
             }
@@ -57,6 +63,31 @@ namespace myMoneAppAPI.Controllers
         {
             billingRepositorio.Remove(id);
             return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        [HttpGet]
+        [Route("api/Summary")]
+        public Summary GetSummary()
+        {
+            decimal debito = 0, credito = 0;
+            foreach (var item in billingRepositorio.GetAll())
+            {
+                foreach (var credits in item.credits)
+                {
+                    credito += credits.value;
+                }
+                foreach (var debits in item.debts)
+                {
+                    debito += debits.value;
+                }
+            }
+
+            var summary = new Summary
+            {
+                debt = debito,
+                credit = credito
+            };
+            return summary;
         }
     }
 }

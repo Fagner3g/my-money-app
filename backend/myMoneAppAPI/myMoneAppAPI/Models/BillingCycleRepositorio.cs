@@ -11,53 +11,68 @@ namespace myMoneAppAPI.Models
         {
             Add(new BillingCycle
             {
-                ID = 1,
-                Name = "Teste Da API",
-                Year = 2018,
-                Month = 9,
-                Credito = new Credito
-                {
-                    Name = "Pagamento de Salário",
-                    Value = 20000
+                id = 1,
+                name = "Janeiro",
+                year = 2018,
+                month = 9,
+                credits = new List<Credito>()
+                    {
+                        new Credito {
+                            name = "Diversas",
+                            value = 1500
+                        },
+                        new Credito {
+                            name = "Pagamento Salário",
+                            value = 1500
+                        }
                 },
-                Debito = new Debito
-                {
-                    Name = "Pagamento de Academia",
-                    Value = 100
+                debts = new List<Debito>() {
+                    new Debito
+                    {
+                        name = "Pagamento Academia",
+                        value = 70,
+                        status = "Pago"
+                    },
+                    new Debito
+                    {
+                        name = "Pagamento Gasolina",
+                        value = 570,
+                        status = "Pendente"
+                    },
+
                 }
             });
             Add(new BillingCycle
             {
-                ID = 2,
-                Name = "Teste Da API número 2",
-                Year = 2018,
-                Month = 10,
-                Credito = new Credito
-                {
-                    Name = "Pagamento de Salário BH",
-                    Value = 1500
+                id = 2,
+                name = "Fevereiro",
+                year = 2018,
+                month = 5,
+                credits = new List<Credito>()
+                    {
+                        new Credito {
+                            name = "Diversas",
+                            value = 6
+                        },
+                        new Credito {
+                            name = "Pagamento Salário",
+                            value = 900
+                        }
                 },
-                Debito = new Debito
-                {
-                    Name = "Pagamento de Academia São Paulo",
-                    Value = 150
-                }
-            });
-            Add(new BillingCycle
-            {
-                ID = 3,
-                Name = "Produção de Teste",
-                Year = 2018,
-                Month = 10,
-                Credito = new Credito
-                {
-                    Name = "Pagamento de Salário BH",
-                    Value = 1500
-                },
-                Debito = new Debito
-                {
-                    Name = "Pagamento de Academia São Paulo",
-                    Value = 150
+                debts = new List<Debito>() {
+                    new Debito
+                    {
+                        name = "Pagamento Academia",
+                        value = 70,
+                        status = "Pago"
+                    },
+                    new Debito
+                    {
+                        name = "Pagamento Diversos",
+                        value = 570,
+                        status = "Pendente"
+                    },
+
                 }
             });
         }
@@ -72,7 +87,7 @@ namespace myMoneAppAPI.Models
 
         public BillingCycle Get(int id)
         {
-            return billingRepositorio.Find(b => b.ID == id);
+            return billingRepositorio.Find(b => b.id == id);
         }
 
         public IEnumerable<BillingCycle> GetAll()
@@ -82,7 +97,7 @@ namespace myMoneAppAPI.Models
 
         public void Remove(int id)
         {
-            billingRepositorio.RemoveAll(b => b.ID == id);
+            billingRepositorio.RemoveAll(b => b.id == id);
         }
 
         public bool Update(BillingCycle billing)
@@ -90,7 +105,7 @@ namespace myMoneAppAPI.Models
             if (billing == null)
                 throw new ArgumentException("Billing not Null");
 
-            int index = billingRepositorio.FindIndex(b => b.ID == billing.ID);
+            int index = billingRepositorio.FindIndex(b => b.id == billing.id);
             if (index == -1)
                 return false;
 
