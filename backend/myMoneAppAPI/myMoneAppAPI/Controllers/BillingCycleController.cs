@@ -10,7 +10,7 @@ using System.Web.Http.Results;
 
 namespace myMoneAppAPI.Controllers
 {
-    [EnableCors(origins: "http://localhost:8080", headers: "*", methods: "*")]
+    [Authorize]
     public class BillingCycleController : ApiController
     {
         static readonly IBillingCycleRepositorio billingRepositorio = new BillingCycleRepositorio();

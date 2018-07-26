@@ -49,3 +49,16 @@ C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\
 C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\System.Web.Cors.dll
 C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\System.Web.Http.Cors.dll
 C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\System.Web.Http.Cors.xml
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Cors.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Security.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Security.OAuth.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Owin.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\System.Web.Http.Owin.dll
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.xml
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Cors.xml
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Security.xml
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\DESENVOLVIMENTO\PROJETOS\REACT JS\Exemples\my-money-app\backend\myMoneAppAPI\myMoneAppAPI\bin\System.Web.Http.Owin.xml
